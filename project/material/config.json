@@ -1,0 +1,1665 @@
+{
+    "title": "PeachVar-DB Portal",
+    "title_short": "PeachVar-DB",
+    "description": "<b>PeachVar-DB</b>: interactive browsing and visualization of a curated collection of peach genetic variation data obtained from whole-genome resequencing experiments",
+    "license": "<a rel=\"license\" href=\"http://creativecommons.org/licenses/by-nc/4.0/\"><img alt=\"Creative Commons License\" style=\"border-width:0\" src=\"https://i.creativecommons.org/l/by-nc/4.0/88x31.png\" /></a><br />This work is licensed under a <a rel=\"license\" href=\"http://creativecommons.org/licenses/by-nc/4.0/\">Creative Commons Attribution-NonCommercial 4.0 International License</a>.",
+    "meta": [{
+            "key": "robots",
+            "value": "noindex"
+        },
+        {
+            "key": "description",
+            "value": "PeachVar-DB: interactive browsing and visualization of a curated collection of peach genetic variation data obtained from whole-genome resequencing experiments"
+        }
+    ],
+    "footer": "",
+    "login": false,
+    "image": {
+        "src": "http://www.rodalesorganiclife.com/sites/rodalesorganiclife.com/files/styles/slideshow-desktop/public/peachpit_zadorozhna_natalia_1100.jpg?itok=TFYdDSOe",
+        "percentage_width": "200"
+    },
+    "logos": [{
+            "image": "http://users.unimi.it/valorvi/members_file/image004.jpg"
+        },
+        {
+            "image": "http://www.procedamus.it/images/CINECA.jpg"
+        }
+    ],
+    "menu": [{
+            "name": "Home",
+            "url": "main"
+        }, {
+            "name": "Search",
+            "items": [{
+                "name": "Search by region",
+                "url": "search_by_region"
+            }, {
+                "name": "Search by gene feature",
+                "url": "search_by_gene_type"
+            }, {
+                "name": "Search by gene ID",
+                "url": "search_by_gene_name"
+            }, {
+                "name": "Search by accession",
+                "url": "search_by_cultivar"
+            }, {
+                "name": "Search by sequence similarity",
+                "url": "launch_blast"
+            }, {
+                "name": "Pairwise accession comparison",
+                "url": "evaluate_differences_between_two_cultivars"
+            }]
+        }, {
+            "name": "Accession info",
+            "items": [{
+                "name": "Dataset information",
+                "url": "dataset"
+            }, {
+                "name": "Population structure",
+                "url": "population_structure"
+            }, {
+                "name": "Phylogenesis",
+                "url": "phylogenesis"
+            }, {
+                "name": "Phenotypic data",
+                "url": "phenotypic_data"
+            }]
+        }, {
+            "name": "JBrowse",
+			"url": "jbrowse"
+        },
+        {
+            "name": "Downloads",
+			"url": "downloads"
+        }, {
+            "name": "Statistics",
+            "url": "statistic"
+        }, {
+            "name": "Contacts",
+            "url": "contact"
+        },
+        {
+            "name": "About",
+            "url": "about"
+        },
+        {
+            "name": "Help",
+            "url": "help"
+        }
+    ],
+    "forms": [{
+            "pageID": "search_by_region",
+            "title": "Search by region",
+            "subtitle": "Find and explore genomic variants in PeachVar-DB. Please select a genomic region of interest (Chromosome, Start and End position) in order to display associated variants. You can also decide whether you are interested only in SNPs or INDELS or both. Please be aware that the coordinates system correspond to the peach reference genome version 2.0.",
+            "tooltip": "<b>Query example</b>: Pp03:10119190-10200000",
+            "elements": [
+            	[
+	            	{
+	                	"title": "Examples of queries",
+	                	"show": "before_send",
+	                	"subtitle": "Click on the buttons to automatically load a search query. SNP array data has been obtained from <a href=\"ftp://ftp.bioinfo.wsu.edu/www.rosaceae.org/Prunus_persica/Prunus_persica-genome.v2.0.a1/SNPs/IRSC_9K_peach_SNP_array_on_Peach_v2.0.a1.xls\">GDR site</a>.",
+	                    "elements": [
+	                    	{
+	                    		"type": "button",
+	                    		"label": "See genetic markers",
+	                    		"title": "Chromosome Pp03, coordinates 10119180-10119508",
+	                    		"data": {
+	                    			"image": "marker-icon.png",
+	                    			"height": "25px",
+	                    			"onClick": [
+		                    			{
+		                    				"key": "chromosome_id",
+		                    				"value": "Pp03",
+		                    				"action": "write"
+		                    			},
+		                    			{
+		                    				"key": "start_position",
+		                    				"value": 10119180,
+		                    				"action": "write"
+		                    			},
+		                    			{
+		                    				"key": "end_position",
+		                    				"value": 10119508,
+		                    				"action": "write"
+		                    			},
+		                    			{
+		                    				"key": "include_snps",
+		                    				"value": true,
+		                    				"action": "write"
+		                    			},
+		                    			{
+		                    				"key": "include_indels",
+		                    				"value": false,
+		                    				"action": "write"
+		                    			}
+		                    		]
+	                    		}
+	                    	},
+	                    	{
+	                    		"type": "button",
+	                    		"label": "See SNP arrays (IRSC 9K)",
+	                    		"title": "Chromosome Pp01, coordinates 12037300-12037400",
+	                    		"data": {
+	                    			"image": "snp-icon.png",
+	                    			"height": "25px",
+	                    			"onClick": [
+		                    			{
+		                    				"key": "chromosome_id",
+		                    				"value": "Pp01",
+		                    				"action": "write"
+		                    			},
+		                    			{
+		                    				"key": "start_position",
+		                    				"value": 12037300,
+		                    				"action": "write"
+		                    			},
+		                    			{
+		                    				"key": "end_position",
+		                    				"value": 12037400,
+		                    				"action": "write"
+		                    			},
+		                    			{
+		                    				"key": "include_snps",
+		                    				"value": true,
+		                    				"action": "write"
+		                    			},
+		                    			{
+		                    				"key": "include_indels",
+		                    				"value": false,
+		                    				"action": "write"
+		                    			}
+		                    		]
+	                    		}
+	                    	}
+	                    ]
+	                }
+	            ],
+	            [
+	                {
+	                    "title": "Additional information",
+	                    "alignment": "right",
+	                    "elements": [
+	                    {
+	                        "label": "See in JBrowse",
+	                        "type": "button",
+	                        "action": "link",
+	                        "data": {
+	                            "icon": "fa-arrow-circle-right",
+	                            "modifiers": "fa-2x",
+	                            "url": "http://hpc-bioinformatics.cineca.it/jbrowse/JBrowse-1.12.1/index.html?data=data%2FpersicaV2&loc=CHROMOSOME_ID:START_POSITION..END_POSITION&tracks=MySNPs%2CMyIndels%2CGenes%2CMarkersV2a1%2Crefseqs%2CBlastX_Osativa%2CBlastX_Pavium%2CBlastX_Athaliana&highlight=",
+	                            "error_message": "Please fill-in the form on the left",
+	                            "templates": [
+	                                    {
+	                                        "template": "CHROMOSOME_ID",
+	                                        "key": "chromosome_id"
+	                                    },
+	                                    {
+	                                        "template": "START_POSITION",
+	                                        "key": "start_position"
+	                                    },
+	                                    {
+	                                        "template": "END_POSITION",
+	                                        "key": "end_position"
+	                                    }
+	                                ],
+	                            "onChange": "nothing"
+	                        }},
+	                     {
+	                        "label": "See in Synteny Viewer",
+	                        "type": "button",
+	                        "color": "lawngreen",
+	                        "action": "link",
+	                        "data": {
+	                            "icon": "fa-arrow-circle-right",
+	                            "modifiers": "fa-2x",
+	                            "url": "https://www.rosaceae.org/gb/gbrowse_syn/m_domestica_vs_p_communis_vs_p_persica_vs_f_vesca/?search_src=p_persica;name=CHROMOSOME_ID:START_POSITION..END_POSITION",
+	                            "error_message": "Please fill-in the form on the left",
+	                            "templates": [
+	                                    {
+	                                        "template": "CHROMOSOME_ID",
+	                                        "key": "chromosome_id"
+	                                    },
+	                                    {
+	                                        "template": "START_POSITION",
+	                                        "key": "start_position"
+	                                    },
+	                                    {
+	                                        "template": "END_POSITION",
+	                                        "key": "end_position"
+	                                    }
+	                                ],
+	                            "onChange": "nothing"
+	                        }}
+	                    ]
+	                }
+	            ]
+            ],
+            "post_elements": [{
+                    "type": "button",
+                    "label": "Download results in VCF",
+                    "data": {
+                        "onClick": "/pioppo_api/pioppo/download_vcf_by_region/VCF/",
+                        "icon": "fa-table",
+                        "modifiers": "fa-2x",
+                        "action": "send",
+                        "source": "search_by_region"
+                    }
+                },
+                {
+                    "type": "button",
+                    "label": "Download results in TXT",
+                    "data": {
+                        "onClick": "/pioppo_api/pioppo/download_vcf_by_region/TXT/",
+                        "icon": "fa-table",
+                        "modifiers": "fa-2x",
+                        "action": "send",
+                        "source": "search_by_region"
+                    }
+                }
+            ],
+            "submit": {
+                "label": "Search",
+                "url": "/pioppo_api/pioppo/search_by_chromosome2/"
+            },
+           "fields": [
+           {
+                "label": "Chromosome",
+                "key": "chromosome",
+                "type": "select",
+                "subtype": "form",
+                "required": "true",
+                "data": {
+                    "url": "/pioppo_api/pioppo/chromosomes/",
+                    "onChange": {
+                        "key": "chromosome_id",
+                        "action": "write"
+                    }
+                }
+            },
+            {
+                "label": "Start position",
+                "key": "start",
+                "type": "number",
+                "subtype": "form",
+                "required": "true",
+                "data": {
+                    "onChange": {
+                            "key": "start_position",
+                            "action": "write"
+                        }
+                }
+            },
+            {
+                "label": "End position",
+                "key": "end",
+                "type": "number",
+                "subtype": "form",
+                "required": "true",
+                "data":{
+                    "onChange": {
+                            "key": "end_position",
+                            "action": "write"
+                        }
+                    }
+            },
+            {
+                "label": "Include SNP",
+                "key": "include_snps",
+                "type": "checkbox",
+                "subtype": "form",
+                "data":{
+                	"value": false,
+                	"onChange": {
+                        "key": "include_snps",
+                        "action": "write"
+                    }
+                }
+            },
+            {
+                "label": "Include INDELS",
+                "key": "include_indels",
+                "type": "checkbox",
+                "subtype": "form",
+                "data":{
+                	"value": true,
+                	"onChange": {
+                        "key": "include_indels",
+                        "action": "write"
+                    }
+                }
+            }]
+        }, {
+            "pageID": "search_by_gene_type",
+            "title": "Search by gene feature",
+            "subtitle": "Find and explore genomic variants in PeachVar-DB. Please select one of these genetic features: \"CDS\", \"5’ UTR\", \"Gene\", \"mRNA\" or \"3’ UTR\". The \"Gene name\" field can be indicated or not.",
+            "tooltip": "<b>Query example</b>: CDS",
+            "elements": [
+            	[
+	            	{
+	                	"title": "Examples of queries",
+	                	"show": "before_send",
+	                	"subtitle": "Click on the buttons to automatically load a search query",
+	                    "elements": [
+	                    	{
+	                    		"type": "button",
+	                    		"label": "See genetic markers",
+	                    		"title": "Gene Prupe.5G079100, 3' UTR",
+	                    		"error_message": "Please fill-in the form on the left",
+	                    		"data": {
+	                    			"image": "marker-icon.png",
+	                    			"height": "25px",
+	                    			"onClick": [
+		                    			{
+		                    				"key": "gene_id",
+		                    				"value": "Prupe.5G079100",
+		                    				"action": "write"
+		                    			},
+		                    			{
+		                    				"key": "gene_type",
+		                    				"value": "three_prime_UTR",
+		                    				"action": "write"
+		                    			}
+		                    		]
+	                    		}
+	                    	},
+	                    	{
+	                    		"type": "button",
+	                    		"label": "See SNP arrays",
+	                    		"title": "Gene Prupe.1G152400, 3' UTR",
+	                    		"error_message": "Please fill-in the form on the left",
+	                    		"data": {
+	                    			"image": "snp-icon.png",
+	                    			"height": "25px",
+	                    			"onClick": [
+		                    			{
+		                    				"key": "gene_id",
+		                    				"value": "Prupe.1G152400",
+		                    				"action": "write"
+		                    			},
+		                    			{
+		                    				"key": "gene_type",
+		                    				"value": "three_prime_UTR",
+		                    				"action": "write"
+		                    			}
+		                    		]
+	                    		}
+	                    	}
+	                    ]
+	                }
+	            ],
+	            [
+	                {
+	                    "title": "Additional information",
+	                    "alignment": "right",
+	                    "elements": [
+	                    {
+	                        "label": "See this gene in JBrowse",
+	                        "error_message": "Please fill-in the form on the left",
+	                        "type": "button",
+	                        "action": "link",
+	                        "data": {
+	                            "icon": "fa-arrow-circle-right",
+	                            "modifiers": "fa-2x",
+	                            "url": "http://hpc-bioinformatics.cineca.it/jbrowse/JBrowse-1.12.1/index.html?data=data%2FpersicaV2&loc=GENE_ID&tracks=MySNPs%2CMyIndels%2CGenes%2CMarkersV2a1%2Crefseqs%2CBlastX_Osativa%2CBlastX_Pavium%2CBlastX_Athaliana&highlight=",
+	                            "error_message": "Please fill-in the form on the left",
+	                            "templates": [
+	                                    {
+	                                        "template": "GENE_ID",
+	                                        "key": "gene_id"
+	                                    }
+	                                ],
+	                            "onChange": "nothing"
+	                        }
+	                    },
+	                    	{
+                            "label": "See this gene in Phytozome",
+                            "type": "button",
+                            "title": "Opens a new window with the information of the searched gene in Phytozome",
+                            "color": "lawngreen",
+                            "action": "link",
+                            "data": {
+                                "icon": "fa-leaf",
+                                "modifiers": "fa-2x",
+                                "error_message": "Please fill-in the form on the left",
+                                "url": "https://phytozome.jgi.doe.gov/pz/portal.html#!results?search=0&crown=1&star=1&method=4909&searchText=GENE_ID&offset=0",
+                                "templates": [{
+                                    "template": "GENE_ID",
+                                    "key": "gene_id"
+                                }],
+                                "onChange": "nothing"
+                            }
+                        },
+                    {
+                            "label": "See this gene's GOterms",
+                            "title": "Opens a popup with the GOterms associated with the searched gene",
+                            "type": "button",
+                            "color": "lightblue",
+                            "action": "dialog",
+                            "data": {
+                                "image": "https://s3.amazonaws.com/go-public/image/go-logo-icon.png",
+                                "height": "30px"
+                            },
+                            "card": {
+                                "title": "Detailed information for gene ID",
+                                "width": "100",
+                                "elements": [{
+                                            "type": "table",
+                                            "data": {
+                                            	"error_message": "Please fill-in the form on the left",
+                                            	"empty_message": "Unfortunately this gene has no GOterms associated.",
+                                                "url": "/pioppo_api/pioppo/see_go_terms/GENE_ID/",
+												"templates": [
+			                                       {
+			                                           "template": "GENE_ID",
+			                                           "key": "gene_id"
+			                                       }
+	                                        	]
+                                            }
+                                    }]
+                            }
+                        }
+	                    ]
+	                }
+	            ]
+            ],
+    		"post_elements": [{
+                    "type": "button",
+                    "label": "Download results in VCF",
+                    "data": {
+                        "onClick": "/pioppo_api/pioppo/download_vcf_by_gene_type/VCF/",
+                        "icon": "fa-table",
+                        "modifiers": "fa-2x",
+                        "action": "send",
+                        "source": "search_by_gene_type"
+                    }
+                },
+                {
+                    "type": "button",
+                    "label": "Download results in TXT",
+                    "data": {
+                        "onClick": "/pioppo_api/pioppo/download_vcf_by_gene_type/TXT/",
+                        "icon": "fa-table",
+                        "modifiers": "fa-2x",
+                        "action": "send",
+                        "source": "search_by_gene_type"
+                    }
+                }
+            ],
+            "submit": {
+                "label": "Search",
+                "url": "/pioppo_api/pioppo/search_by_gene_feature/"
+            },
+            "fields": [{
+                    "label": "Gene name",
+                    "key": "gene_name",
+                    "type": "autocomplete",
+					"subtype": "form",
+                    "data": {
+            			"url": "/pioppo_api/pioppo/genes/",
+                        "onChange": {
+                            "key": "gene_id",
+                            "action": "write"
+                        }
+                    }
+                },
+                {
+                    "label": "Gene feature",
+                    "type": "select",
+					"subtype": "form",
+                    "key": "gene_type",
+			        "data": {
+	                    "url": "/pioppo_api/pioppo/gene_types/",
+	                    "onChange": {
+                            "key": "gene_type",
+                            "action": "write"
+                        }
+			        }
+                }
+            ]
+        }, {
+            "pageID": "search_by_gene_name",
+            "title": "Search by gene ID",
+            "subtitle": "Find and explore genomic variants in PeachVar-DB. Please select a gene of interest in order to display all the associated genetic variants.",
+            "tooltip": "<b>Query example</b>: Prupe.6G110400",
+			"post_elements": [{
+                    "type": "button",
+                    "label": "Download results in VCF",
+                    "data": {
+                        "onClick": "/pioppo_api/pioppo/download_vcf_by_gene_name/VCF/",
+                        "icon": "fa-table",
+                        "modifiers": "fa-2x",
+                        "action": "send",
+                        "source": "search_by_gene_name"
+                    }
+                },
+                {
+                    "type": "button",
+                    "label": "Download results in TXT",
+                    "data": {
+                        "onClick": "/pioppo_api/pioppo/download_vcf_by_gene_name/TXT/",
+                        "icon": "fa-table",
+                        "modifiers": "fa-2x",
+                        "action": "send",
+                        "source": "search_by_gene_name"
+                    }
+                }
+            ],
+            "submit": {
+                "label": "Search",
+                "url": "/pioppo_api/pioppo/search_by_gene2/"
+            },
+            "elements": [
+                [{
+                    "title": "Additional information",
+                    "width": "100",
+                    "alignment": "right",
+                    "elements": [{
+                            "label": "See in JBrowse",
+                            "type": "button",
+                            "title": "Opens a new window with the JBrowse view centered on the searched gene",
+                            "action": "link",
+                            "data": {
+                                "icon": "fa-arrow-circle-right",
+                                "modifiers": "fa-2x",
+                                "error_message": "Please fill-in the form on the left",
+                                "url": "/jbrowse/JBrowse-1.12.1/index.html?data=data%2FpersicaV2&loc=GENE_ID&tracks=MySNPs%2CMyIndels%2CGenes%2CMarkersV2a1%2Crefseqs%2CBlastX_Osativa%2CBlastX_Pavium%2CBlastX_Athaliana&highlight=",
+                                "templates": [{
+                                    "template": "GENE_ID",
+                                    "key": "gene_id"
+                                }],
+                                "onChange": "nothing"
+                            }
+                        },
+                        {
+                            "label": "See in Phytozome",
+                            "type": "button",
+                            "title": "Opens a new window with the information of the searched gene in Phytozome",
+                            "color": "lawngreen",
+                            "action": "link",
+                            "data": {
+                                "icon": "fa-leaf",
+                                "modifiers": "fa-2x",
+                                "error_message": "Please fill-in the form on the left",
+                                "url": "https://phytozome.jgi.doe.gov/pz/portal.html#!results?search=0&crown=1&star=1&method=4909&searchText=GENE_ID&offset=0",
+                                "templates": [{
+                                    "template": "GENE_ID",
+                                    "key": "gene_id"
+                                }],
+                                "onChange": "nothing"
+                            }
+                        },
+                    {
+                            "label": "See GOterms",
+                            "title": "Opens a popup with the GOterms associated with the searched gene",
+                            "type": "button",
+                            "color": "lightblue",
+                            "action": "dialog",
+                            "data": {
+                                "image": "https://s3.amazonaws.com/go-public/image/go-logo-icon.png",
+                                "height": "30px"
+                            },
+                            "card": {
+                                "title": "Detailed information for gene ID",
+                                "width": "100",
+                                "elements": [{
+                                            "type": "table",
+                                            "data": {
+                                            	"error_message": "Please fill-in the form on the left",
+                                                "url": "/pioppo_api/pioppo/see_go_terms/GENE_ID/",
+												"templates": [
+			                                       {
+			                                           "template": "GENE_ID",
+			                                           "key": "gene_id"
+			                                       }
+	                                        	]
+                                            }
+                                    }]
+                            }
+                        }
+                    ]
+                }]
+            ],
+            "fields": [{
+                "label": "Gene name",
+                "key": "gene_name",
+                "type": "autocomplete",
+"subtype": "form",
+                "data": {
+        "url": "/pioppo_api/pioppo/genes/",
+                    "onChange": {
+                        "key": "gene_id",
+                        "action": "write"
+                    }
+                }
+            }]
+        }, {
+            "pageID": "search_by_cultivar",
+            "title": "Search by accession",
+            "subtitle": "Find and explore genomic variants in PeachVar-DB. Please select one accession name in order to display all the associated genetic variants.",
+            "tooltip": "<b>Query example</b>: Kamarat",
+    		"post_elements": [{
+                    "type": "button",
+                    "label": "Download results in VCF",
+                    "data": {
+                        "onClick": "/pioppo_api/pioppo/download_vcf_by_cultivar/VCF/",
+                        "icon": "fa-table",
+                        "modifiers": "fa-2x",
+                        "action": "send",
+                        "source": "search_by_cultivar"
+                    }
+                },
+                {
+                    "type": "button",
+                    "label": "Download results in TXT",
+                    "data": {
+                        "onClick": "/pioppo_api/pioppo/download_vcf_by_cultivar/TXT/",
+                        "icon": "fa-table",
+                        "modifiers": "fa-2x",
+                        "action": "send",
+                        "source": "search_by_cultivar"
+                    }
+                }
+            ],
+            "submit": {
+                "label": "Search",
+                "url": "/pioppo_api/pioppo/search_by_cultivar2/"
+            },
+            "fields": [{
+                "key": "cultivars",
+                "label": "Accession name",
+                "type": "autocomplete",
+                "subtype": "form",
+                "required": "true",
+                "data": {
+                    "url": "/pioppo_api/pioppo/cultivars/"
+                }
+            }]
+        },
+        {
+            "pageID": "evaluate_differences_between_two_cultivars",
+            "title": "Pairwise accession comparison",
+            "tooltip": "<b>Query example</b>: Kamarat and Dr Davis",
+            "submit": {
+                "type": "GET",
+                "label": "Search",
+                "url": "/pioppo_api/pioppo/compare2/"
+            },
+            "fields": [{
+                "label": "First accession",
+                "type": "select",
+                "subtype": "form",
+                "key": "first_accession",
+                "required": "true",
+                "data": {
+                    "url": "/pioppo_api/pioppo/cultivars/"
+                }
+            }, {
+                "label": "Second accession",
+                "type": "select",
+                "subtype": "form",
+                "key": "second_accession",
+                "required": "true",
+                "data": {
+                    "url": "/pioppo_api/pioppo/cultivars/"
+                }
+            }]
+        },
+        {
+            "pageID": "launch_blast",
+            "title": "Paste in a query sequence to find its location in the peach genome (v. 2.0). ",
+            "subtitle": "Example: ACGATCGGACGCTGCTAGTACGACTCCGA",
+            "tooltip": "<b>Sequence example</b>: ACGAGCACATCGTAGCTGCTGACAAAA",
+            "submit": {
+                "label": "Search",
+                "url": "/pioppo_api/pioppo/blast2/"
+            },
+            "fields": [{
+                "label": "Paste your sequence here",
+                "key": "sequence",
+                "type": "textarea",
+                "subtype": "form",
+                "required": "true"
+            }]
+        }
+    ],
+    "pages": [{
+            "pageID": "main",
+            "title": "Home",
+            "long_description": "Next-generation sequencing technologies applied to many species of horticultural interest are bearing the potential to accelerate the understanding and exploitation of genetic resources. PeachVar-DB is an open-source catalog of genetic variants present in peach (P. persica L. Batsch) and wild-related species of Prunus genera, annotated from 146 Whole Genome Re-Sequencing (WGRS) experiments publicly released on Sequence Reads Archive (SRA). Our scope is to make quickly and easily accessible a large amount of information from WGRS projects for a range of purposes, spacing from genotyping to functional genomics. The web interface of the database is designed for an intuitive and user-friendly exploration and provides several tools for searching and downloading the data, along with useful data statistics and information.",
+            "long_description_alignment": "justify",
+            "elements": [
+                [{
+                        "title": "Global statistics",
+                        "width": "33",
+                        "elements": [{
+                            "type": "table",
+                            "data": {
+                                "url": "/pioppo_api/pioppo/get_total_stats/"
+                            }
+                        }]
+                    },
+{
+                        "title": "Number of variants per accession",
+                        "width": "66",
+                        "elements": [{
+                            "type": "chart-pie",
+                            "data": {
+                                "url": "/pioppo_api/pioppo/get_distribution/Cultivar/Variants/"
+                            }
+                        }]
+                    }    
+                ],
+                [
+                    {
+                        "width": "70",
+                        "elements": [{
+                            "type": "table",
+                            "data": {
+                                "url": "/pioppo_api/pioppo/get_variants_per_cultivar/"
+                            }
+                        }]
+                    }
+                ],
+                [{
+                    "title": "Distribution of types of variants found by each algorithm",
+                             "elements": [{
+                        "type": "table",
+                        "data": {
+                            "url": "/pioppo_api/pioppo/algorithms_statistics/"
+                        }
+                    }]
+                }]
+            ]
+        },
+        {
+            "pageID": "dataset",
+    		"title": "Dataset",
+            "show_description": false,
+            "elements": [
+                [{
+                        "title": "Dataset overview (P. persica (L.) Batsch)",
+                        "width": "100",
+                        "elements": [{
+                            "type": "table",
+                            "data": {
+                                "url": "/pioppo_api/pioppo/get_info_all_simple/persica/"
+                            }
+                        }]
+                    }],[
+                    {
+                        "title": "Dataset overview (wild-relatives)",
+                        "width": "100",
+                        "elements": [{
+                            "type": "table",
+                            "data": {
+                                "url": "/pioppo_api/pioppo/get_info_all_simple/wild/"
+                            }
+                        }]
+                    }
+                ]
+            ]
+        },
+        {
+            "pageID": "phenotypic_data",
+            "title": "Phenotypic information",
+            "subtitle": "In this section you can navigate the phenotypic data associated to the 146 accessions of Peach",
+            "show_description": false,
+            "elements": [
+                [{
+                        "title": "Phenotypic traits distribution (persica)",
+                        "width": "60",
+                        "elements": [{
+                            "type": "multi",
+                            "width": "100",
+                            "layout": "row",
+                            "data": {
+                                "url": "/pioppo_api/pioppo/get_info_all_distributions/persica/"
+                            }
+                        }]
+                    },
+                    {
+                        "title": "Details (persica)",
+                        "subtitle": "Click on the pie-charts on the left to display details about the trait of interest",
+                        "width": "40",
+                        "elements": [{
+                            "type": "table",
+                            "width": "100",
+                            "data": {
+                                "url": "/pioppo_api/pioppo/get_detail/persica/PHENO_DIMENSION/PHENO_VALUE",
+                                "onChange": "load",
+                                "templates": [{
+                                        "template": "PHENO_DIMENSION",
+                                        "key": "pheno_dimension"
+                                    },
+                                    {
+                                        "template": "PHENO_VALUE",
+                                        "key": "pheno_dimension_value"
+                                    }
+                                ]
+                            }
+                        }]
+                    }
+                ],
+                [{
+                    "title": "Details of phenotypic traits (persica)",
+                    "width": "100",
+                    "elements": [{
+                        "type": "table",
+                        "data": {
+                            "url": "/pioppo_api/pioppo/get_info_all/persica/"
+                        }
+                    }]
+                }],
+                [{
+                        "title": "Phenotypic traits distribution (wild-relatives)",
+                        "width": "100",
+                        "elements": [{
+                            "type": "multi",
+                            "width": "60",
+                            "layout": "row",
+                            "data": {
+                                "url": "/pioppo_api/pioppo/get_info_all_distributions/wild/"
+                            }
+                        }]
+                    },
+                    {
+                        "title": "Details (wild-relatives)",
+                        "subtitle": "Click on the pie-charts on the left to display details about the trait of interest",
+                        "width": "40",
+                        "elements": [{
+                            "type": "table",
+                            "width": "100",
+                            "data": {
+                                "url": "/pioppo_api/pioppo/get_detail/wild/PHENO_DIMENSION/PHENO_VALUE",
+                                "onChange": "load",
+                                "templates": [{
+                                        "template": "PHENO_DIMENSION",
+                                        "key": "pheno_dimension"
+                                    },
+                                    {
+                                        "template": "PHENO_VALUE",
+                                        "key": "pheno_dimension_value"
+                                    }
+                                ]
+                            }
+                        }]
+                    }
+                ],
+                [{
+                    "title": "Details of phenotypic traits (wild-relatives)",
+                    "width": "100",
+                    "elements": [{
+                        "type": "table",
+                        "data": {
+                            "url": "/pioppo_api/pioppo/get_info_all/wild/"
+                        }
+                    }]
+                }]
+            ]
+        },
+        {
+            "pageID": "jbrowse",
+            "title": "JBrowse",
+            "long_description": "",
+            "width": "100%",
+            "elements": [
+                [{
+                    "width": "100",
+                    "height": "auto",
+                    "elements": [{
+                        "type": "iframe",
+                        "width": "100%",
+                        "height": "1000px",
+                        "data": {
+                            "url": "/jbrowse/JBrowse-1.12.1/index.html?data=data%2FpersicaV2&loc=Pp01%3A22694565..22709367&tracks=MySNPs%2CMyIndels%2CGenes%2CMarkersV2a1%2Crefseqs%2CBlastX_Osativa%2CBlastX_Pavium%2CBlastX_Athaliana&highlight="
+                        }
+                    }]
+                }]
+            ]
+        },
+        {
+            "pageID": "downloads",
+            "title": "Downloads",
+            "elements": [
+                [{
+                    "title": "Download data",
+                    "subtitle": "The variant calling procedure has been performed using three algorithms: Freebayes, GATK and BCFtools and the 146 accessions have been analyzed through a joint variant calling procedure. Only the genetic variants identified by all the three algorithms have been selected in order to obtain a more reliable result. Once obtained, the final joint VCF file has been splitted into individual samples and consequently zipped and indexed with bgzip utility from samtools suite (<a href='http://www.htslib.org/doc/tabix.html'>http://www.htslib.org/doc/tabix.html</a>). Here you can download the annotated VCF file relative to each of the 146 accessions.",
+                    "width": "100",
+                    "elements": [{
+                        "type": "table",
+                        "data": {
+                            "url": "/pioppo_api/pioppo/download/"
+                        }
+                    }]
+                }]
+            ]
+        },
+        {
+            "pageID": "population_structure",
+            "title": "Population structure",
+            "long_description": "Population structure inferred from 50k randomly selected SNPs in ADMIXTUREv1.22. The analysis is performed by inputting successive values of K (a priori genetic clusters) from 2 to 8. A cross-validation procedure in Admixture software has been used to identify the value of K that maximizes the predictive accuracy (i.e. that minimizes CV-error) based on a 10-fold cross-validation with 10 different fixed initial seeds",
+            "elements": [
+                [
+                    {
+                        "title": "Population structure",
+                        "subtitle": "Values on Y-axis indicate the membership probability to each a priori cluster. Admixture model-based simulations were carried out by varying K from 2 to 10 with 10 iterations using all 146 genotypes which showed evident knees at K = 2, differentiating prunus persica from wild relatives. A value of K = 4 explains most of the ancestry within accessions, differentiating the cluster of wild relatives (P4) and ornamental peach (P2) from edible peach (P1 and P3), showing various degree of admixture. For higher values of K, landraces and accessions derived from Oriental and Occidental breeding tend to separate.",
+                        "width": "50",
+                        "elements": [
+                            {
+                                "type": "button",
+                                "label": "K=2",
+                                "data": {
+                                    "value": 2,
+                                    "onClick": [{
+                                        "key": "number_of_families",
+                                        "action": "write"
+                                    }]
+                                }
+                            },
+                            {
+                                "type": "button",
+                                "label": "K=3",
+                                "data": {
+                                    "value": 3,
+                                    "onClick": [{
+                                        "key": "number_of_families",
+                                        "action": "write"
+                                    }]
+                                }
+                            },
+                            {
+                                "type": "button",
+                                "label": "K=4",
+                                "data": {
+                                    "value": 4,
+                                    "onClick": [{
+                                        "key": "number_of_families",
+                                        "action": "write"
+                                    }]
+                                }
+                            },
+                            {
+                                "type": "button",
+                                "label": "K=5",
+                                "data": {
+                                    "value": 5,
+                                    "onClick": [{
+                                        "key": "number_of_families",
+                                        "action": "write"
+                                    }]
+                                }
+                            },
+                            {
+                                "type": "button",
+                                "label": "K=6",
+                                "data": {
+                                    "value": 6,
+                                    "onClick": [{
+                                        "key": "number_of_families",
+                                        "action": "write"
+                                    }]
+                                }
+                            }
+                        ]
+                    },
+                    {
+                        "title": "Cross-validation plot",
+                        "subtitle": "A cross-validation procedure has been used to identify the value of K that maximizes the predictive accuracy based on a 10-fold cross-validation with 10 different fixed initial seeds",
+                        "width": "50",
+                        "elements": [{
+                            "type": "chart-line",
+                            "stacked": true,
+                            "data": {
+                                "url": "/pioppo_api/pioppo/get_cross_validation_data/",
+                                "min": 0.3,
+                                "max": 0.7
+                            }
+                        }]
+                    }
+                ],
+                [
+                    {
+                        "title": "Graph of population structure according to the selection of K",
+                        "subtitle": "Click on the yellow buttons to select a given K. Hover on the plot to see details of specific accessions and the associated clusters.",
+                        "width": "100",
+                        "elements": [{
+                            "type": "chart-bar",
+                            "stacked": true,
+                            "data": {
+                                "url": "/pioppo_api/pioppo/get_family_structure/FAMILIES/",
+                                "max": "1.0",
+                                "templates": [
+                                    {
+                                        "template": "FAMILIES",
+                                        "key": "number_of_families"
+                                    }
+                                ]
+                            }
+                        }]
+                    }
+                ]
+            ]
+        },
+        {
+            "pageID": "phylogenesis",
+            "title": "Phylogenesis",
+            "long_description": "The evolutionary relationship among accessions was inferred from whole-genome SNPs data using SNPhylo (filtering and MUSCLE alignment). The dendrogram has been built from pairwise similarity matrix by using a Maximum Likelihood estimate in PhyML 3.0.",
+            "elements": [
+                [{
+                    "title": "Phylogenetic tree",
+                    "width": "100",
+                    "elements": [{
+                        "type": "button",
+                        "label": "Download Newick tree",
+                        "action": "download",
+                        "url": "/pioppo_api/pioppo/download_tree/"
+                    }, {
+                        "type": "tree",
+                        "data": {
+                            "url": "/pioppo_api/pioppo/get_tree/"
+                        }
+                    }]
+                }]
+            ]
+        },
+        {
+            "pageID": "statistic",
+            "title": "Statistics",
+            "elements": [
+                [{
+                    "title": "Statistics for accession",
+                    "subtitle": "Number of SNPs and INDELS for each accession",
+                    "width": "66",
+                    "elements": [
+{
+                            "type": "paragraph",
+                            "inline": "true",
+                            "data": {
+                                "value": "Select an accession: "
+                            }
+                        },
+                        {
+                            "type": "select",
+                            "subtype": "form",
+                            "value": "SRR1994370.sra",
+                            "data": {
+                                "label": "Select an accession",
+                                "url": "/pioppo_api/pioppo/cultivars/",
+                                "key": "cultivar",
+                                "onChange": {
+                                    "key": "cultivar",
+                                    "action": "write"
+                                }
+                            }
+                        },
+                        {
+                            "type": "two-column-table",
+                            "data": {
+                                "url": "/pioppo_api/pioppo/get_stats_of_sample/CULTIVAR/",
+                                "templates": [{
+                                    "template": "CULTIVAR",
+                                    "key": "cultivar"
+                                }]
+                            }
+                        }
+                    ]
+                }],
+        [
+            {
+                        "title": "Accession Cloud",
+                        "subtitle": "Schematic representation of the total number of variants (INDELS and SNPS) in the 146 analyzed accessions of peach and wild-relatives. Size of accession names correlates to the number of associated variants. If the cloud is not visible (e.g., misrendered/collapsed cloud), please update the page.",
+                        "width": "66",
+                        "elements": [{
+                            "type": "cloud",
+                            "width": "400",
+                            "height": "400",
+                            "steps": "7",
+                            "data": {
+                                "url": "/pioppo_api/pioppo/get_stats/VARIANTS_PER_SAMPLE/"
+                            }
+                            }]
+                }    
+],
+                [{
+                        "title": "SNP density by region (peach)",
+                        "subtitle": "The plot displays the number of SNPs for selected bins (genomic intervals) of predefined size, calculated through the SNPdensity function in VCFtools.",
+                        "width": "50",
+                        "elements": [{
+                                "type": "slider",
+                                "label": "Select the size of the window",
+                                "data": {
+                                    "min": "200000",
+                                    "max": "10000000",
+                                    "value": "2200000",
+                                    "step": "500000",
+                                    "onChange": {
+                                        "action": "write",
+                                        "key": "window_snp_persica_density"
+                                    }
+                                }
+                            },
+                            {
+                                "type": "chart-bar",
+                                "data": {
+                                    "url": "/pioppo_api/pioppo/variant_peach_stat/persica.snpden/1/WINDOW_SNP_PERSICA_DENSITY/",
+                                    "templates": [{
+                                        "template": "WINDOW_SNP_PERSICA_DENSITY",
+                                        "key": "window_snp_persica_density"
+                                    }]
+                                }
+                            },
+                            {
+                            	"type": "paragraph",
+                            	"data": {
+                            		"value": "Please hover on the chart bars to see the details in the tooltip."
+                            	} 
+                            }
+                        ]
+                    },
+                    {
+                        "title": "SNP density by region (wild relatives)",
+                        "subtitle": "The plot displays the number of SNPs for selected bins (genomic intervals) of predefined size, calculated through the SNPdensity function in VCFtools.",
+                        "width": "50",
+                        "elements": [{
+                                "type": "slider",
+                                "label": "Select the size of the window",
+                                "data": {
+                                    "min": "200000",
+                                    "max": "10000000",
+                                    "value": "10000000",
+                                    "step": "500000",
+                                    "onChange": {
+                                        "action": "write",
+                                        "key": "window_snp_density"
+                                    }
+                                }
+                            },
+                            {
+                                "type": "chart-bar",
+                                "data": {
+                                    "url": "/pioppo_api/pioppo/variant_peach_stat/persica.snpden/1/WINDOW_SNP_DENSITY/",
+                                    "templates": [{
+                                        "template": "WINDOW_SNP_DENSITY",
+                                        "key": "window_snp_density"
+                                    }]
+                                }
+                            },
+                            {
+                            	"type": "paragraph",
+                            	"data": {
+                            		"value": "Please hover on the chart bars to see the details in the tooltip."
+                            	} 
+                            }
+                        ]
+                    }
+                ],
+                [{
+                        "title": "Linkage disequilibrium (LD) by region",
+                        "subtitle":"The plot displays the degree of linkage disequilibrium (r2)  i.e the non-random association of alleles at different loci, among the whole SNPs dataset as calculated using a sliding window analysis with a fixed bin of 100 kb and step of 50 kb for SNPs separated by a maximum of 15 kb, using an in-house R-script. For the analysis SNPs were phased by using Beagle v4.0 and pairwise LD value were estimated using ld-window function in VCFtools.",
+                        "width": "100",
+                        "elements": [
+                        	{
+                        		"type": "paragraph",
+                        		"data": {
+                        			"value": "<h2>Persica</h2>"
+                        		}
+                        	},
+                        	{
+                                "type": "slider",
+                                "label": "Select the size of the genomic window",
+                                "data": {
+                                    "min": "200000",
+                                    "max": "10000000",
+                                    "value": "2200000",
+                                    "step": "500000",
+                                    "onChange": {
+                                        "action": "write",
+                                        "key": "window_persica_ld"
+                                    }
+                                }
+                            },
+                            {
+                                "type": "chart-bar",
+                                "data": {
+                                    "url": "/pioppo_api/pioppo/variant_peach_stat/persica.LD/1/WINDOW_LD/",
+                                    "templates": [{
+                                        "template": "WINDOW_LD",
+                                        "key": "window_persica_ld"
+                                    }]
+                                }
+                            },
+                            {
+                            	"type": "paragraph",
+                            	"data": {
+                            		"value": "Please hover on the chart bars to see the details in the tooltip."
+                            	} 
+                            },
+                            {
+                        		"type": "divider"
+                        	},
+                            {
+                        		"type": "paragraph",
+                        		"data": {
+                        			"value": "<h2>Wild-relatives</h2>"
+                        		}
+                        	},
+                            {
+                                "type": "slider",
+                                "label": "Select the size of the genomic window",
+                                "data": {
+                                    "min": "200000",
+                                    "max": "10000000",
+                                    "value": "10000000",
+                                    "step": "500000",
+                                    "onChange": {
+                                        "action": "write",
+                                        "key": "window_wild_ld"
+                                    }
+                                }
+                            },
+                            {
+                                "type": "chart-bar",
+                                "data": {
+                                    "url": "/pioppo_api/pioppo/variant_peach_stat/wild.LD/1/WINDOW_LD/",
+                                    "templates": [{
+                                        "template": "WINDOW_LD",
+                                        "key": "window_wild_ld"
+                                    }]
+                                }
+                            },
+                            {
+                            	"type": "paragraph",
+                            	"data": {
+                            		"value": "Please hover on the chart bars to see the details in the tooltip."
+                            	} 
+                            }
+                        ]
+                    }
+                ],
+                [{
+                        "title": "Nucleotide diversity (&pi;)",
+                        "subtitle": "the plot displays the nucleotide diversity (&pi;) between <i>P. persica</i> accessions and wild-relatives, i.e the degree of polymorphism measured through the average number of per site nucleotide differences between all possible pairs of DNA sequences in the selected population",
+                        "width": "50",
+                        "elements": [{
+                            "type": "chart-bar",
+                            "data": {
+                                "url": "/pioppo_api/pioppo/variant_peach_stat_global/0/200000/"
+                            }
+                        },
+                        {
+                        	"type": "paragraph",
+                        	"data": {
+                        		"value": "Please hover on the chart bars to see the details in the tooltip."
+                        	} 
+                        }]
+                    },
+                    {
+                        "title": "Gene density by chromosome",
+                        "subtitle": "The plot displays the number of annotated transcripts on peach genome v2.1 for selected bins (genomic intervals) of predefined size, calculated using BEDOPS <i>echo count</i> function.",
+                        "width": "50",
+                        "elements": [{
+                            "type": "chart-bar",
+                            "data": {
+                                "url": "/pioppo_api/pioppo/variant_peach_stat/gene.simple.density/0/200000/",
+                                "onClick": [{
+                                    "action": "write",
+                                    "key": "chromosome"
+                                }]
+                            }
+                        },
+                        {
+                        	"type": "paragraph",
+                        	"data": {
+                        		"value": "Please hover on the chart bars to see the details in the tooltip."
+                        	} 
+                        }]
+                    }
+                ],
+                [{
+                    "title": "Mean depth (SNP)",
+                    "subtitle": "by selecting the size of genomic window, mean read depth will be consequently displayed for each chromosome across all individuals",
+                    "width": "100",
+                    "elements": [{
+                            "type": "slider",
+                            "label": "Select the size of the genomic window",
+                            "data": {
+                                "min": "1800000",
+                                "max": "10000000",
+                                "value": "1000000",
+                                "step": "1000000",
+                                "onChange": {
+                                    "action": "write",
+                                    "key": "snp_window"
+                                }
+                            }
+                        },
+                        {
+                            "type": "chart-bar",
+                            "data": {
+                                "url": "/pioppo_api/pioppo/variant_peach_stat/mean_depth_SNP.site/1/WINDOW/",
+                                "templates": [{
+                                    "template": "WINDOW",
+                                    "key": "snp_window"
+                                }]
+                            }
+                        },
+                        {
+                        	"type": "paragraph",
+                        	"data": {
+                        		"value": "Please hover on the chart bars to see the details in the tooltip."
+                        	} 
+                        }
+                    ]
+                }],
+                [{
+                    "title": "Gene density by region",
+                    "width": "100",
+                    "elements": [{
+                            "type": "slider",
+                            "label": "Select the size of the window",
+                            "data": {
+                                "min": "2000000",
+                                "max": "10000000",
+                                "value": "1000000",
+                                "step": "1000000",
+                                "onChange": {
+                                    "action": "write",
+                                    "key": "window"
+                                }
+                            }
+                        },
+                        {
+                            "type": "chart-bar",
+                            "data": {
+                                "url": "/pioppo_api/pioppo/variant_peach_stat/gene.simple.density/1/WINDOW/",
+                                "templates": [{
+                                    "template": "WINDOW",
+                                    "key": "window"
+                                }]
+                            }
+                        },
+                        {
+                        	"type": "paragraph",
+                        	"data": {
+                        		"value": "Please hover on the chart bars to see the details in the tooltip."
+                        	} 
+                        }
+                    ]
+                }]
+            ]
+        },
+        {
+            "pageID": "contact",
+            "title": "Contacts",
+            "elements": [
+                [{
+                    "title": "Contacts",
+                    "width": "100",
+                    "elements": [{
+                            "type": "icon",
+                            "data": {
+                                "icon": "fa-users",
+                                "modifiers": "fa-2x",
+                                "color": "green"
+                            }
+                        },
+                        {
+                            "type": "paragraph",
+                            "data": {
+                                "value": "<a href='http://www.disaa.unimi.it/ecm/home'>Dipartimento di Scienze Agrarie e Ambientali - Produzione, Territorio, Agroenergia</a> dell'Università degli studi di Milano (UNIMI)"
+                            },
+                            "inline": "true"
+                        },
+                        {
+                            "type": "paragraph",
+                            "data": {
+                                "value": "Contacts: Marco Cirilli (marco.cirilli@unimi.it), Filippo Geuna (filippo.geuna@unimi.it)"
+                            }
+                        },
+                        {
+                            "type": "divider"
+                        },
+                        {
+                            "type": "icon",
+                            "data": {
+                                "icon": "fa-users",
+                                "modifiers": "fa-2x",
+                                "color": "green"
+                            }
+                        },
+                        {
+                            "type": "paragraph",
+                            "data": {
+                                "value": "Consorzio interuniversitario italiano senza scopo di lucro <a href='https://www.cineca.it'>CINECA</a>"
+                            },
+                            "inline": "true"
+                        },
+                        {
+                            "type": "paragraph",
+                            "data": {
+                                "value": "Contacts: Giovanni Chillemi (g.chillemi@cineca.it), Tiziana Castrignanò (t.castrignano@cineca.it), Silvia Gioiosa (s.gioiosa@cineca.it), Tiziano Flati (t.flati@cineca.it), Ilario Tagliaferri (i.tagliaferri@cineca.it)"
+                            }
+                        }
+                    ]
+                }]
+            ]
+        },
+        {
+            "pageID": "about",
+            "title": "About",
+            "long_description": "PeachVar-DB is an open-source catalog of genetic variants present in peach (P. persica L. Batsch) and wild-related species of Prunus genera, annotated from 146 publicly released Whole Genome Re-Sequencing experiments hosted under the Sequence Reads Archive (SRA). The current database release is assembled onto peach reference genome version v2.0 and contains a total of 4,630,814 SNPs and 461,785 INDELs, identified through the intersection of the results from three variant-calling algorithms: GATK, BCFtools and FreeBayes. The detected peach variants derive from a selection of high confident and accurate consensus call set obtained by comparing the results of each variant calling algorithm and reporting only those supported by all algorithms.",
+            "elements": [
+                [
+                	{
+                		"title": "Description",
+                		"width": "100",
+                		"elements": [
+                			{
+                				"type": "paragraph",
+                				"data": {
+		                			"value": "The web interface of Peach-VarDB provides several tools for searching and downloading SNP and INDEL variants under the Searching menu:"
+		                		}
+		                	},
+		                	{
+		                		"type": "bullet_list",
+		                		"data": [
+		                			"<a href='search_by_region'>Search by region</a> function for retrieving the selected variant type (SNP or INDEL) in specific genomic region;",
+		                			"<a href='search_by_gene_type'>Search by gene features</a> function for retrieving all variants within user defined gene models;",
+		                			"<a href='search_by_gene_name'>Search by gene ID</a> function for retrieving all variants within a particular gene of interest (transcripts are coded based on the JGI nomenclature for peach genome v2.1 annotations);",
+		                			"<a href='search_by_cultivar'>Search by accession</a> function for navigating within all the variants identified in the queried accession;",
+		                			"<a href='launch_blast'>Search by sequence similarity</a> function for BLAST search against the peach genome assembly",
+		                			"<a href='evaluate_differences_between_two_cultivars'>Pairwise accession comparison</a> function for pairwise genotype comparisons between two selected accessions."
+								]
+		                	},
+		                	{
+		                		"type": "paragraph",
+		                		"data": {
+		                			"value": "The results from each query, are integrated with a range of additional annotations, including BioSample/BioProject information, peach mapped genetic markers, syntenic maps, gene homologous, Gene Ontology (GO) annotations and links to genetic variants previously identified through SNP array technologies and provide by GDR portal (<a href='https://www.rosaceae.org/'>https://www.rosaceae.org/</a>)."
+		                		}
+		                	},
+		                	{
+		                		"type": "paragraph",
+		                		"data": {
+		                			"value": "The 'Accession info' section provides a <a href='dataset'>dataset information</a> of the accession panel and related resources (SRA and Bioproject), <a href='population_structure'>population structure</a>, <a href='phylogenesis'>phylogenesis</a> and <a href='phenotypic_data'>basic phenotypic data</a>"
+		                		}
+		                	},
+		                	{
+		                		"type": "paragraph",
+		                		"data": {
+		                			"value": "PeachVar-DB integrates a JBrowse interface (<a href='http://hpc-bioinformatics.cineca.it/jbrowse/JBrowse-1.12.1/index.html?data=data%2FpersicaV2'>http://hpc-bioinformatics.cineca.it/jbrowse/JBrowse-1.12.1/index.html?data=data%2FpersicaV2</a>) for a panning and zooming navigation of the peach reference genome, and including gene models, putative orthologous from other species (cherry, rice and Arabidopsis thaliana) and the direct visualization of SNPs/INDELs location. Furthermore, the user can load and visualize a custom track file (gff, VCF, SAM or BAM format). The user should ensure that the coordinates system present in his custom file correspond to the 2.0 version of peach reference genome. The <a href='statistic'>Statistics section</a> provides a range of useful statistics about the number of annotated variants, whole-genome linkage disequilibrium patterns, SNP density, nucleotide diversity and gene density are shown in a dynamical summary or interactive histograms."
+		                		}
+		                	}
+                		]
+                	}
+                ],
+                [
+                	{
+                		"title": "Web architecture",
+                		"width": "100",
+                		"elements": [
+            				{
+            					"type": "paragraph",
+            					"data": {
+            						"value": "PeachVar-DB is developed on the AngularJS framework (v. 1.6.4) which presents data in a dynamic manner within a single-page application (SPA). The graphical user interface has been implemented through Angular material library (v. 1.1.4), a reference implementation of Google's Material Design Specification. The front-end relies also on third-party graphical libraries, such as d3, angular-chart and md-data-table."
+            					}
+            				}
+                		]
+                	}
+                ],
+                [
+                	{
+                		"title": "Funding",
+                		"width": "100",
+                		"elements": [
+            				{
+            					"type": "paragraph",
+            					"data": {
+            						"value": "Peach-VarDB is funded by the LISA Initiative, supported in equal parts by Regione Lombardia and Consortium CINECA; Italian Node of Elixir project (<a href='http://elixir-italy.org'>http://elixir-italy.org</a>) for high performance computing resources. This work is also funded by the University of Milan and MasPes project."
+            					}
+            				}
+                		]
+                	}
+                ],
+                [
+                	{
+                		"title": "Useful links",
+                		"width": "100",
+                		"elements": [
+            				{
+            					"type": "paragraph",
+            					"data": {
+            						"value": "Genome Database for Rosaceae (GDR, <a href='http:/www.rosaceae.org'>http:/www.rosaceae.org</a>), the long-standing central repository and data mining resource for Rosaceae research.Phytozome V12.1 (<a href='https://phytozome.jgi.doe.gov'>https://phytozome.jgi.doe.gov</a>), a comparative platform for green plant genomics."
+            					}
+            				}
+                		]
+                	}
+                ]
+            ]
+        },
+        {
+            "pageID": "help",
+            "title": "Help",
+            "elements": [
+                [{
+                    "title": "Help",
+                    "width": "100",
+                    "elements": [{
+                            "type": "icon",
+                            "data": {
+                                "icon": "fa-question-circle",
+                                "modifiers": "fa-2x",
+                                "color": "orange"
+                            }
+                        },
+                        {
+                            "type": "paragraph",
+                            "data": {
+                                "value": "<b>What is PeachVar-DB portal?</b>"
+                            },
+                            "inline": "true"
+                        },
+                        {
+                            "type": "paragraph",
+                            "data": {
+                                "value": "PeachVar-DB is an open-source catalog of genetic variants present in peach (P. persica L. Batsch) and wild-related species of Prunus genera, annotated from 146 Whole Genome Re-Sequencing (WGRS) experiments publicly released on Sequence Reads Archive (SRA). Our scope is to make quickly and easily accessible a large amount of information from WGRS projects for a range of purposes, spacing from genotyping to functional genomics. The web interface of the database is designed for an intuitive and user-friendly exploration and provides several tools for searching and downloading the data, along with useful data statistics and information."
+                            }
+                        },
+                        {
+                            "type": "icon",
+                            "data": {
+                                "icon": "fa-question-circle",
+                                "modifiers": "fa-2x",
+                                "color": "orange"
+                            }
+                        },
+                        {
+                            "type": "paragraph",
+                            "data": {
+                                "value": "<b>How do I access PeachVar-DB?</b>"
+                            },
+                            "inline": "true"
+                        },
+                        {
+                            "type": "paragraph",
+                            "data": {
+                                "value": "The access to PeachVar-DB is public and free."
+                            }
+                        },
+                        {
+                            "type": "icon",
+                            "data": {
+                                "icon": "fa-question-circle",
+                                "modifiers": "fa-2x",
+                                "color": "orange"
+                            }
+                        },
+                        {
+                            "type": "paragraph",
+                            "data": {
+                                "value": "<b>How do I cite PeachVar-DB?</b>"
+                            },
+                            "inline": "true"
+                        },
+                        {
+                            "type": "paragraph",
+                            "data": {
+                                "value": "We have no published paper right now."
+                            }
+                        },
+                        {
+                            "type": "icon",
+                            "data": {
+                                "icon": "fa-question-circle",
+                                "modifiers": "fa-2x",
+                                "color": "orange"
+                            }
+                        },
+                        {
+                            "type": "paragraph",
+                            "data": {
+                                "value": "<b>How do I ask questions?</b>"
+                            },
+                            "inline": "true"
+                        },
+                        {
+                            "type": "paragraph",
+                            "data": {
+                                "value": "Please send an email to <a href='mailto:hpc-service-bio@cineca.it'>hpc-service-bio AT cineca.it</a>."
+                            }
+                        },
+                        {
+                            "type": "icon",
+                            "data": {
+                                "icon": "fa-question-circle",
+                                "modifiers": "fa-2x",
+                                "color": "orange"
+                            }
+                        },
+                        {
+                            "type": "paragraph",
+                            "data": {
+                                "value": "<b>How can I query PeachVar-DB?</b>"
+                            },
+                            "inline": "true"
+                        },
+                        {
+                            "type": "paragraph",
+                            "data": {
+                                "value": "We have implemented different types of search panels. You can query by:"
+                            }
+                        },
+                        {
+                            "type": "bullet_list",
+                            "data": [
+                                "<b>Region</b>: make your query by starting from either a chromosome and/or positions;",
+                                "<b>Gene feature</b>: include in results 5'UTR, 3'UTR, CDS, primary transcripts and CDS+Introns;",
+                                "<b>Gene ID</b>: start your search by gene ID (e.g., Prupe1G000100);",
+                                "<b>Accession</b>: see all the genetic variants associated with a given accession."
+                            ]
+                        }
+                    ]
+                }]
+            ]
+        }
+    ]
+}
